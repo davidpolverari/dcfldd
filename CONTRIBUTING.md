@@ -1,27 +1,139 @@
-## HOW TO CONTRIBUTE TO DCFLDD DEVELOPMENT
+# Contributing to dcfldd
 
-dcfldd is available at
-https://github.com/resurrecting-open-source-projects/dcfldd
+First of all, thanks for your interest in dcfldd development. In general, there are two ways to contribute to the project:
 
-If you are interested in contribute to dcfldd development, please, follow
-these steps:
+- Reporting bugs
+- Collaborating with Pull Requests
 
-1. Send a patch that fix an issue or that implement a new feature.
-   Alternatively, you can do a 'pull request'[1] in GitHub.
-
-   [1] https://help.github.com/articles/about-pull-requests
-
-2. Ask for join to the dcfldd project in GitHub, if you want to work
-   officially. Note that this second step is not compulsory. However,
-   to accept you in project, is needed a minimum previous collaboration.
+In this guide you will get an overview of the contribution worflow from opening
+an issue, creating a PR, reviewing and merging the PR.
 
 
-To find issues and bugs to fix, you can check these addresses:
+## Getting Started
 
-   - https://github.com/resurrecting-open-source-projects/dcfldd
-   - https://bugs.debian.org/cgi-bin/pkgreport.cgi?dist=unstable;package=dcfldd
-   - https://bugs.launchpad.net/ubuntu/+source/dcfldd/+bugs
+Contributions are made to this repository via Issues and Pull Requests (PRs). A
+few guidelines that cover both:
 
-If you want to join, please make a contact.
+- Ensure you are using the latest dcfldd development version. Your issue may
+  already have been solved on master.
 
-  -- Eriberto, Mon, 28 Oct 2019 23:29:53 -0300.
+- If you are using a version of dcfldd packaged by your operating system or
+  distribution, discuss your contributions there first, as there might be
+  differences from the upstream version. Package maintainers will forward the
+  bug reports or patches, if the deem it adequate.
+
+- Search for [existing Issues](https://github.com/resurrecting-open-source-projects/dcfldd/issues)
+  and [PRs](https://github.com/resurrecting-open-source-projects/dcfldd/pulls)
+  before creating your own.
+
+### Issues
+
+Issues should be used to report problems dcfldd, request a new feature, or to
+discuss potential changes before a PR is created. When you create a new Issue,
+a template will be loaded that will guide you through collecting and providing
+the information we need to investigate.
+
+If you find an Issue that addresses the problem you're having, please add your
+own reproduction information to the existing issue rather than creating a new
+one.
+
+If a related issue does not exist, you can open a new issue using the
+[appropriate form](https://github.com/resurrecting-open-source-projects/dcfldd/issues/new/choose).
+
+
+### Pull Requests
+
+PRs to our libraries are always welcome and can be a quick way to get your fix or improvement slated for the next release. In general, PRs should:
+
+- Each PR should have only one concern (either fix a bug, or implement a feature, for example, not both).
+- Be composed by one or more commits related to the concern.
+- Have one commit per logical change.
+- Each commit should be atomic.
+- Each commit should leave the codebase in a buildable, consistent state.
+
+- Be aligned to project vision, principles etc. If in conflict, a discussion should be opened before. 
+Each PR should address a single logical change. If you want to address multiple logical changes, open a PR per change.
+
+
+In general, the workflow used to contribute to dcfldd is described in [GitHub
+flow](https://docs.github.com/en/get-started/quickstart/github-flow).
+
+
+You should create a new branch for each pull request you intend to send.  Any
+changes you make should be committed to this branch. No changes should be
+committed directly on master.
+
+When making your changes, please take into account the coding style, project goals, guidelines, etc.
+
+### Notes about commits
+
+Before committing your changes, make sure your local copy builds and works.
+
+Each commit in the context of a pull request must be an _atomic commit_. This means that each commit addresses only the changes for a single, complete unit of work.
+
+As an example, if your pull request is about adding a new feature, you might end up with:
+
+- a commit that changes the required source files to implement the feature;
+- a second commit that adds a test to catch regressions; and
+- a third commit that explains the feature on the documentation.
+
+Notice that there is no problem for a commit to modify several files at once, but those changes should be related. This is done to ease review.
+
+Ideally, each commit must leave the source tree in a buildable and working state. Of course, you are free to make any commits you want on your local copy, but if they do not comply with this requirement, you must rebase before sending your PR.
+
+Only rebase changes that have not landed on master.
+
+Your commit message must comply to the following format:
+
+- a subject line, in the imperative ("Add feature X", "Fix wrong Y", "Make dcfldd...")
+
+Commit messages shall be divided in two parts:
+
+- A mandatory summary line (50 chars max)
+- An optional message body (each line 72 char max).
+
+The message body paragraphs should be separated from themselves, and from the
+summary line by one blank line.
+
+The summary line should not exceed 50 lines. `git log` shows summary lines with 4 spaces padding on the left. If we consider a 80-column terminal, we will want 4 spaces on the right as padding to keep the alignment, thus ending up with an useful estate of 72 columns.
+
+For the subject line, lthough 50 columns is not a hard limit, when using `git log` this helps in making the subject line not passing the commit SHA-1 line in length, which would otherwise make it hard to distinguish from the message body.
+
+
+#### Signing-off commits
+Any non-trivial commit should be signed-off.
+
+By contributing to this project, you agree to the [Developer Certificate of
+Origin (DCO)](https://developercertificate.org/).
+
+The DCO is a lightweight way for contributors to certify that they wrote or otherwise have the right to submit the code to the project.
+
+Contributors _sign-off_ that they adhere to these requirements by adding a `Signed-off-by` line to commit messages.
+
+```
+This is my commit message
+
+Signed-off-by: Random J Developer <random@developer.example.org>
+```
+
+Git even has a `-s` command line option to append this automatically to your commit message:
+
+```console
+$ git commit -s -m 'This is my commit message'
+```
+
+### Push your branch to your remote
+When your work is done:
+
+- check if the project master was updated
+- if it was, rebase on master and test your changes again
+- push your branch to your remote
+
+### Create a new Pull Request
+
+The PR description should not be the same text as the auto-generated commit log.
+
+If the PR fixes an issue, write "Closes: #X" on the end of the commit message body.
+
+- When writing the PR description, use the conventional commit guidelines.
+
