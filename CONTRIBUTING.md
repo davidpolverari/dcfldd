@@ -43,16 +43,22 @@ If a related issue does not exist, you can open a new issue using the
 
 ### Pull Requests
 
-PRs to our libraries are always welcome and can be a quick way to get your fix or improvement slated for the next release. In general, PRs should:
+PRs to dcfldd are always welcome and can be a quick way to get your fix or improvement slated for the next release.
+As PRs are meant to be reviewed before being merged in the codebase, in general they should:
 
 - Each PR should have only one concern (either fix a bug, or implement a feature, for example, not both).
-- Be composed by one or more commits related to the concern.
-- Have one commit per logical change.
-- Each commit should be atomic.
+- Implement only the minimal changes related to that concern.
+- Be composed by one or more commits that implement those changes.
+- Have one commit per logical unit of change.
+- Each commit should be small in scope: it should do only one thing. Although this often correlates to minimizing the modified lines of code, it is not a firm requirement.
+- Each commit should be atomic (a stable, independent unit of change). This means that the codebase should still build, pass tests, and function if rolled back to that exact commit.
+
 - Each commit should leave the codebase in a buildable, consistent state.
 
-- Be aligned to project vision, principles etc. If in conflict, a discussion should be opened before. 
+- Be aligned to project vision, principles etc. If in conflict, a discussion should be opened before.
 Each PR should address a single logical change. If you want to address multiple logical changes, open a PR per change.
+
+Think of your PR as a story. Your commits should compose the narrative of how your story was written in a logical sequence. This makes it easier to review your changes.
 
 
 In general, the workflow used to contribute to dcfldd is described in [GitHub
