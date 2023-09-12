@@ -165,4 +165,4 @@ If you are interested to help dcfldd, read the project [contributing guidelines]
 ## License
 
 Licensed under the terms of the GNU General Public License version 2 or later.
-For more information, refer to the [acompanying license information](COPYING).
+For more information, refer to the [accompanying license information](COPYING).
