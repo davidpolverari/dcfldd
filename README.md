@@ -1,27 +1,23 @@
 [![Packaging status](https://repology.org/badge/tiny-repos/dcfldd.svg)](https://repology.org/project/dcfldd/versions)
 
 # dcfldd
+dcfldd -- enhanced version of `dd` for security and forensics.
 
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Obtaining the source](#obtaining-the-source)
+  - [Building](#building)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+
+## Introduction
 `dcfldd` is an enhanced version of the `dd` command with additional features
 useful for forensics and information security, designed to run on Unix or
 Unix-like (POSIX-compliant) operating systems.
-
-It was originally created by Nicholas Harbour from the DoD Computer Forensics
-Laboratory (DCFL) as a fork of the GNU coreutils `dd` program. He maintained
-the package long after his affiliation with the DCFL had ended.  The original
-project became stalled circa 2006, with no further updates on the original
-homepage[^1] since then.
-
-Since 2019, dcfldd has been maintained by volunteers under the [Ressurecting
-Open Source Projects](https://github.com/resurrecting-open-source-projects)
-organization on Github. The first version released by the organization was 1.5,
-based on the original 1.3.4-1 version with patches applied from the Debian
-dcfldd package[^2], along with some improvements.
-
-[^1]: https://sourceforge.net/projects/dcfldd
-[^2]: https://tracker.debian.org/pkg/dcfldd
-
-## Features
 
 Some key features distinguish dcfldd from coreutils dd:
 
@@ -40,14 +36,21 @@ Some key features distinguish dcfldd from coreutils dd:
   - **Piped output and logs**: dcfldd can send all its log data and output to
     commands as well as files natively.
 
-## License
+dcfldd was originally created by Nicholas Harbour from the DoD Computer Forensics
+Laboratory (DCFL) as a fork of the GNU coreutils `dd` program. He maintained
+the package long after his affiliation with the DCFL had ended.  The original
+project became stalled circa 2006, with no further updates on the original
+homepage[^1] since then.
 
-Licensed under the terms of the GNU General Public License version 2 or later.
-For more information, refer to the [acompanying license information](COPYING).
+[^1]: https://sourceforge.net/projects/dcfldd
 
-## Getting Started
+Since 2019, dcfldd has been maintained by volunteers under the [Ressurecting
+Open Source Projects](https://github.com/resurrecting-open-source-projects)
+organization on Github. The first version released by the organization was 1.5,
+based on the original 1.3.4-1 version with patches applied from the Debian
+dcfldd package[^2], along with some improvements.
 
-### Installing from package repositories
+[^2]: https://tracker.debian.org/pkg/dcfldd
 
 Several operating systems already package and distribute dcfldd[^3], although
 some are still stuck on the ancient last version from the original project
@@ -61,9 +64,9 @@ Users of Debian and derivative distributions can install dcfldd through APT:
 user@host:~$ sudo apt install dcfldd
 ```
 
-Please notice that some repositories may contain older versions of dcfldd, especially those from stable distributions.
+For other operating systems, please consult the respective package manager information.
 
-### Installing from source
+## Getting Started
 
 dcfldd is a C language project that relies on GNU Autotools to create its
 build system (a "GNU Build System"). To avoid polluting the source tree with
@@ -79,28 +82,7 @@ End-users might be better using release tarballs to build dcfldd, as it
 requires less dependencies and tools. Potential contributors should familiarize
 themselves with the git repository and the associated workflow.
 
-#### Obtaining the source
-
-dcfldd source code can be obtained from source control by using `git`:
-
-```shell
-git clone https://github.com/resurrecting-open-source-projects/dcfldd.git
-```
-
-Alternatively, you can download the latest tarball from the [Releases](https://github.com/resurrecting-open-source-projects/dcfldd/releases) page.
-Then, unpack it to a directory:
-
-```shell
-tar xvzf dcfldd-?.?.tar.gz --strip-components 1 --one-top-level=dcfldd
-```
-
-Then change the current working directory to the dcfldd source root:
-
-```shell
-cd dcfldd
-```
-
-#### Installing dependencies
+### Prerequisites
 
 There are no runtime dependencies for this package, except for `libc` (which is
 already present in all POSIX-like operating systems). During build, dcfldd
@@ -130,7 +112,28 @@ Remember that you may omit installing `autoconf` if you are installing from the
 release tarballs. For other operating systems or package managers, please refer
 to their documentation to find out how to install the required packages.
 
-#### Building and installing
+### Obtaining the source
+
+dcfldd source code can be obtained from source control by using `git`:
+
+```shell
+git clone https://github.com/resurrecting-open-source-projects/dcfldd.git
+```
+
+Alternatively, you can download the latest tarball from the [Releases](https://github.com/resurrecting-open-source-projects/dcfldd/releases) page.
+Then, unpack it to a directory:
+
+```shell
+tar xvzf dcfldd-?.?.tar.gz --strip-components 1 --one-top-level=dcfldd
+```
+
+Then change the current working directory to the dcfldd source root:
+
+```shell
+cd dcfldd
+```
+
+### Building
 
 If you cloned the repository from source control, you will need to generate the build system first:
 
@@ -149,9 +152,17 @@ make
 sudo make install
 ```
 
+## Usage
+TBD.
+
 ## Contributing
 
 dcfldd needs your help. **If you are a programmer** and if you want to help a
 nice project, this is your opportunity.
 
 If you are interested to help dcfldd, read the project [contributing guidelines](CONTRIBUTING.md).
+
+## License
+
+Licensed under the terms of the GNU General Public License version 2 or later.
+For more information, refer to the [acompanying license information](COPYING).
