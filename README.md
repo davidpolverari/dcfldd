@@ -1,7 +1,10 @@
 [![Packaging status](https://repology.org/badge/tiny-repos/dcfldd.svg)](https://repology.org/project/dcfldd/versions)
 
-# dcfldd
-dcfldd -- enhanced version of `dd` for security and forensics.
+# dcfldd -- enhanced version of `dd` for security and forensics.
+
+`dcfldd` is an enhanced version of the `dd` command with additional features
+useful for forensics and information security, designed to run on Unix or
+Unix-like (POSIX-compliant) operating systems.
 
 ## Table of Contents
 
@@ -15,9 +18,22 @@ dcfldd -- enhanced version of `dd` for security and forensics.
 - [License](#license)
 
 ## Introduction
-`dcfldd` is an enhanced version of the `dd` command with additional features
-useful for forensics and information security, designed to run on Unix or
-Unix-like (POSIX-compliant) operating systems.
+
+dcfldd was originally created by Nicholas Harbour from the DoD Computer Forensics
+Laboratory (DCFL) as a fork of the GNU coreutils `dd` program. He maintained
+the package long after his affiliation with the DCFL had ended.  The original
+project became stalled circa 2006, with no further updates on the original
+homepage[^1] since then.
+
+[^1]: https://sourceforge.net/projects/dcfldd
+
+Since 2019, dcfldd has been maintained by volunteers under the [Ressurecting
+Open Source Projects](https://github.com/resurrecting-open-source-projects)
+organization on Github. The first version released by the organization was 1.5,
+based on the original 1.3.4-1 version with patches applied from the Debian
+dcfldd package[^2], along with some improvements.
+
+[^2]: https://tracker.debian.org/pkg/dcfldd
 
 Some key features distinguish dcfldd from coreutils dd:
 
@@ -36,22 +52,6 @@ Some key features distinguish dcfldd from coreutils dd:
   - **Piped output and logs**: dcfldd can send all its log data and output to
     commands as well as files natively.
 
-dcfldd was originally created by Nicholas Harbour from the DoD Computer Forensics
-Laboratory (DCFL) as a fork of the GNU coreutils `dd` program. He maintained
-the package long after his affiliation with the DCFL had ended.  The original
-project became stalled circa 2006, with no further updates on the original
-homepage[^1] since then.
-
-[^1]: https://sourceforge.net/projects/dcfldd
-
-Since 2019, dcfldd has been maintained by volunteers under the [Ressurecting
-Open Source Projects](https://github.com/resurrecting-open-source-projects)
-organization on Github. The first version released by the organization was 1.5,
-based on the original 1.3.4-1 version with patches applied from the Debian
-dcfldd package[^2], along with some improvements.
-
-[^2]: https://tracker.debian.org/pkg/dcfldd
-
 Several operating systems already package and distribute dcfldd[^3], although
 some are still stuck on the ancient last version from the original project
 homepage.
@@ -59,6 +59,7 @@ homepage.
 [^3]: https://repology.org/project/dcfldd/versions
 
 Users of Debian and derivative distributions can install dcfldd through APT:
+
 
 ```console
 user@host:~$ sudo apt install dcfldd
